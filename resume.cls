@@ -1,8 +1,26 @@
 \LoadClass[14pt]{extreport}
 
+\newif\if@langset
+\@langsetfalse
+
+\DeclareOption{english}{%
+    \PassOptionsToPackage{english}{babel}%
+    \@langsettrue
+}
+\DeclareOption{danish}{%
+    \PassOptionsToPackage{danish}{babel}%
+    \@langsettrue
+}
+\ProcessOptions\relax
+\if@langset
+    % language was provided
+\else
+    \PassOptionsToPackage{english}{babel}
+\fi
+  
 \usepackage{ifthen}
-\usepackage[english]{babel}
-\usepackage[utf8x]{inputenc}
+\usepackage{babel}
+\usepackage[utf8]{inputenc}
 \usepackage{geometry}
 \usepackage{array}
 \usepackage{enumitem}
