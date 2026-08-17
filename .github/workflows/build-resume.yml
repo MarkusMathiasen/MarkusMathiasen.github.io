@@ -18,8 +18,10 @@ jobs:
         with:
           root_file: resume.tex
 
-      - name: Remove .gitignore before deploy
-        run: rm -f .gitignore
+      - name: Prepare deployment folder
+        run: |
+          mkdir public
+          cp resume.pdf public/
         
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
