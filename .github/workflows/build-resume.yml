@@ -1,35 +1,3 @@
-# name: Build LaTeX CV
-
-# on:
-#   push:
-#     branches: [ main ]
-#     paths:
-#       - 'resume.tex'
-
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Checkout code
-#         uses: actions/checkout@v7
-
-#       - name: Compile LaTeX
-#         uses: xu-cheng/latex-action@v4
-#         with:
-#           root_file: resume.tex
-
-#       - name: Prepare deployment folder
-#         run: |
-#           mkdir public
-#           cp resume.pdf public/
-#           echo "" > public/.gitignore
-        
-#       - name: Deploy to GitHub Pages
-#         uses: peaceiris/actions-gh-pages@v4
-#         with:
-#           github_token: ${{ secrets.GITHUB_TOKEN }}
-#           publish_dir: ./public
-#           keep_files: true
 name: Build and Deploy Website
 
 on:
