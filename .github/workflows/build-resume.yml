@@ -22,6 +22,7 @@ jobs:
         run: |
           mkdir public
           cp resume.pdf public/
+          echo "" > public/.gitignore
         
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
